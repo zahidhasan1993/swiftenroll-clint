@@ -5,7 +5,7 @@ const Colleges = () => {
   const [colleges, setColleges] = useState([]);
 
   useEffect(() => {
-    fetch("data.json")
+    fetch("https://swift-enroll-server.vercel.app/colleges")
       .then((res) => res.json())
       .then((data) => {
         setColleges(data);

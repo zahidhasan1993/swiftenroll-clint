@@ -6,7 +6,7 @@ const BestColleges = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("data.json")
+    fetch("https://swift-enroll-server.vercel.app/colleges")
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -23,7 +23,7 @@ const BestColleges = () => {
 
           <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0">
             {data.map((college) => (
-              <div key={college.Id} className="group ">
+              <div key={college._id} className="group ">
                 <div className="relative h-80 w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-64">
                   <img
                     src={college.image_url}
@@ -55,7 +55,7 @@ const BestColleges = () => {
                   </div>
 
                   <Link
-                    to="/all"
+                    to={`/details/${college._id}`}
                     className=" mt-44 mr-5 p-4 text-white font-bold bg-red-700 rounded-md hover:bg-red-600 hover:text-xl"
                   >
                     Details

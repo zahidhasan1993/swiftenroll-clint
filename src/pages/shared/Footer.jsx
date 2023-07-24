@@ -21,8 +21,8 @@ const Footer = () => {
           <div>
             <h3 className="mb-6 text-sm font-semibold text-gray-900 uppercase">Follow us</h3>
             <ul>
-              <li className="mb-4"><a href="https://github.com/themesberg/flowbite" className="text-gray-600 hover:underline">Github</a></li>
-              <li><a href="https://discord.gg/4eeurUVvTy" className="text-gray-600 hover:underline">Discord</a></li>
+              <li className="mb-4"><a href="https://github.com/zahidhasan1993" className="text-gray-600 hover:underline">Github</a></li>
+              <li><a href="https://zahidhasan1993.netlify.app/" className="text-gray-600 hover:underline">Portfolio</a></li>
             </ul>
           </div>
           <div>
@@ -58,7 +58,7 @@ const Footer = () => {
             </a>
           </div>
           <span className="text-sm text-gray-500 sm:text-center">
-            <a href="https://github.com/RagAndRoll" className="hover:underline">© 2023  Zahid Hasan. All Rights Reserved.</a>
+            <a href="https://github.com/zahidhasan1993" className="hover:underline">© 2023  Zahid Hasan. All Rights Reserved.</a>
           </span>
         </div>
       </footer>

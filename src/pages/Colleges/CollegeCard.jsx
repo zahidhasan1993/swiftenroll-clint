@@ -31,7 +31,7 @@ const CollegeCard = ({ data }) => {
           <p className="line-clamp-6 mb-3 pb-3 overflow-hidden leading-relaxed text-gray-500 cursor-pointer">
             Research Papers : {research_history[2].total}
           </p>
-          <Link to="/" className="p-3 text-white rounded-lg bg-red-700">
+          <Link to={`/details/${data._id}`} className="p-3 text-white rounded-lg bg-red-700">
             Details
           </Link>
         </div>
