@@ -21,6 +21,9 @@
           "publication_date": "2021-11-10",
           "authors": ["Michael Lee", "Sophia Williams"],
           "summary": "The study focuses on the impact of AI and robotics on various industries."
+        },
+        {
+          "total" : 50
         }
       ],
       "sports": ["Football", "Basketball", "Tennis", "Swimming"],
@@ -53,6 +56,9 @@
           "publication_date": "2021-09-12",
           "authors": ["Andrew Lee", "Jennifer Miller"],
           "summary": "This study explores real-world applications of machine learning algorithms."
+        },
+        {
+          "total" : 50
         }
       ],
       "sports": ["Cricket", "Volleyball", "Badminton"],
@@ -85,6 +91,9 @@
           "publication_date": "2021-12-05",
           "authors": ["Sophie Adams", "William Turner"],
           "summary": "The study examines the latest advancements in nanotechnology."
+        },
+        {
+          "total" : 50
         }
       ],
       "sports": ["Table Tennis", "Athletics", "Chess"],
@@ -117,6 +126,9 @@
           "publication_date": "2021-10-25",
           "authors": ["James Adams", "Lily Wilson"],
           "summary": "This study examines space exploration and the mysteries of the cosmos."
+        },
+        {
+          "total" : 50
         }
       ],
       "sports": ["Hockey", "Gymnastics", "Soccer"],
@@ -149,6 +161,9 @@
           "publication_date": "2021-11-28",
           "authors": ["Lucas Turner", "Sophie White"],
           "summary": "The study explores the advancements in biotechnological research."
+        },
+        {
+          "total" : 50
         }
       ],
       "sports": ["Rugby", "Baseball", "Track and Field"],

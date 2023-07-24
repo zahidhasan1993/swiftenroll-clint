@@ -76,7 +76,7 @@ const Navbar = () => {
       </div>
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-gray-300 py-2">
+        <div className="md:hidden bg-black bg-opacity-40 py-2">
           <Link
             to="/"
             className="block text-white hover:text-red-700 px-4 py-2"
