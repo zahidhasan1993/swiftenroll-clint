@@ -4,6 +4,7 @@ import Main from "../layouts/Main";
 import Home from "../pages/Home/Home";
 import Colleges from "../pages/Colleges/Colleges";
 import Details from "../pages/shared/Details";
+import Login from "../Authentications/Login";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`https://swift-enroll-server.vercel.app/college/${params.id}`),
       },
+      {
+        path: "/login",
+        element: <Login></Login>
+      }
     ],
   },
 ]);

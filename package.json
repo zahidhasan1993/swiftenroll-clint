@@ -13,6 +13,7 @@
     "@headlessui/react": "^1.7.15",
     "@heroicons/react": "^2.0.18",
     "@tailwindcss/aspect-ratio": "^0.4.2",
+    "firebase": "^10.1.0",
     "keen-slider": "^6.8.6",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",

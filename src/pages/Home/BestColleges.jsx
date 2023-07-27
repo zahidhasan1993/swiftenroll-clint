@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "@tailwindcss/aspect-ratio";
 import { Link } from "react-router-dom";
 
+
 const BestColleges = () => {
   const [data, setData] = useState([]);
 
@@ -12,7 +13,9 @@ const BestColleges = () => {
         setData(data);
       });
   }, []);
-  console.log(data);
+  // const value = useContext(DataProvider);
+  // console.log(value);
+  // console.log(data);
   return (
     <div className="bg-gray-100">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

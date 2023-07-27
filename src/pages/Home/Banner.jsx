@@ -17,19 +17,19 @@ const Banner = () => {
       showStatus={true}
       showIndicators={false}
     >
-      <div className="h-[40rem]">
+      <div className="md:h-[40rem]">
         <img src={img1} alt="Banner Image" />
       </div>
-      <div className="h-[40rem]">
+      <div className="md:h-[40rem]">
         <img src={img2} alt="Banner Image" />
       </div>
-      <div className="h-[40rem]">
+      <div className="md:h-[40rem]">
         <img src={img3} alt="Banner Image" />
       </div>
-      <div className="h-[40rem]">
+      <div className="md:h-[40rem]">
         <img src={img4} alt="Banner Image" />
       </div>
-      <div className="h-[40rem]">
+      <div className="md:h-[40rem]">
         <img src={img5} alt="Banner Image" />
       </div>
     </Carousel>

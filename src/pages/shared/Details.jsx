@@ -4,7 +4,7 @@ import { useLoaderData } from "react-router-dom";
 const Details = () => {
   const college = useLoaderData();
 
-  console.log(college);
+  // console.log(college);
   return (
     <div className="relative items-center w-full px-5 py-24 mx-auto md:px-12 lg:px-16 max-w-7xl">
       <div className="relative flex-col items-start m-auto align-middle">
@@ -55,8 +55,8 @@ const Details = () => {
               </div>
               <div className="mt-2 text-base text-gray-500">
                 <ul>
-                  {college.events.map((event) => (
-                    <li>{event}</li>
+                  {college.events.map((event,index) => (
+                    <li key={index}>{event}</li>
                   ))}
                 </ul>
               </div>
@@ -69,8 +69,8 @@ const Details = () => {
               </div>
               <div className="mt-2 text-base text-gray-500">
                 <ul>
-                  {college.research_history.map((research) => (
-                    <p>{research.title}</p>
+                  {college.research_history.map((research,index) => (
+                    <p key={index}>{research.title}</p>
                   ))}
                 </ul>
               </div>
