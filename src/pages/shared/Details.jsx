@@ -15,7 +15,7 @@ const Details = () => {
                 <p className="text-2xl font-medium tracking-tight text-black sm:text-4xl">
                   {college.college_name}
                 </p>
-                <p className="max-w-xl mt-4 text-base tracking-tight text-gray-600">
+                <p className="max-w-xl mt-4 text-base tracking-tight text-red-700">
                   {college.college_details.motto}
                 </p>
               </div>

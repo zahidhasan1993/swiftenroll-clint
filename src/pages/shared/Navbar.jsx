@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { DataProvider } from "../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -7,7 +9,28 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const user = false;
+  const { user, logout } = useContext(DataProvider);
+
+  const userLogOut = () => {
+    logout()
+      .then(() => {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Logout Successful",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
+      .catch(() => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+          footer: '<a href="">Why do I have this issue?</a>',
+        });
+      });
+  };
   return (
     <nav className="bg-black bg-opacity-50 fixed z-10 container mx-auto p-4">
       <div className="container mx-auto">
@@ -42,11 +65,21 @@ const Navbar = () => {
             >
               My College
             </Link>
-            {
-              user ? <Link className="px-3 py-2 bg-red-700 text-white rounded-lg hover:bg-red-600">Logout</Link> : <Link
-              to="/login" className="py-2 px-3  bg-white text-black hover:bg-black hover:text-white rounded-lg">Login</Link>
-            }
-          
+            {user ? (
+              <Link
+                onClick={userLogOut}
+                className="px-3 py-2 bg-red-700 text-white rounded-lg hover:bg-red-600"
+              >
+                Logout
+              </Link>
+            ) : (
+              <Link
+                to="/login"
+                className="py-2 px-3  bg-white text-black hover:bg-black hover:text-white rounded-lg"
+              >
+                Login
+              </Link>
+            )}
           </div>
           <div className="md:hidden flex items-center">
             <button
@@ -106,7 +139,6 @@ const Navbar = () => {
           >
             My College
           </Link>
-          
         </div>
       )}
     </nav>
@@ -114,4 +146,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

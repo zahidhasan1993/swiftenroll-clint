@@ -1,5 +1,5 @@
-import React, { createContext } from 'react';
-import { getAuth } from "firebase/auth";
+import React, { createContext, useEffect, useState } from 'react';
+import { GoogleAuthProvider, getAuth, onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
 import app from '../Authentications/firebase.config';
 
 
@@ -9,8 +9,33 @@ const auth = getAuth(app);
 
 
 const AuthProvider = ({children}) => {
+    const [user,setUser] = useState([]);
+    const [loader,setLoader] = useState(true);
+    const googleProvider = new GoogleAuthProvider();
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth,currentUser => {
+            setUser(currentUser)
+            setLoader(true)
+        });
 
-    const values = {name : "zahid", Age : 28}
+        return () => unsubscribe();
+
+    },[]);
+
+
+    const googleLogin = () => {
+        return signInWithPopup(auth, googleProvider);
+    }
+
+    const logout = () => {
+        return signOut(auth);
+    }
+    const values = {
+        user,
+        loader,
+        googleLogin,
+        logout
+    }
     return (
         <DataProvider.Provider value={values}>
             {children}

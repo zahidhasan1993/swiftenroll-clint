@@ -1,7 +1,43 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { DataProvider } from '../Providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Login = () => {
+
+  const {googleLogin} = useContext(DataProvider);
+  const loginWithGoogle = () => {
+    googleLogin()
+    .then((result) => {
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Login Successful',
+        showConfirmButton: false,
+        timer: 1500
+      })
+      console.log(result);
+    })
+    .catch((error) => {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong!',
+        footer: '<a href="">Why do I have this issue?</a>'
+      })
+
+      console.log(error);
+    })
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email,password);
+
+  }
     return (
         <div className="bg-white dark:bg-gray-900">
         <div className="flex justify-center h-screen">
@@ -32,7 +68,7 @@ const Login = () => {
               </div>
   
               <div className="mt-8">
-                <form>
+                <form onSubmit={handleSubmit}>
                   <div>
                     <label htmlFor="email" className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
                       Email Address
@@ -77,7 +113,7 @@ const Login = () => {
                     </button>
                   </div>
                 </form>
-  
+                <button onClick={loginWithGoogle} className='w-full px-4 py-2 tracking-wide text-black transition-colors duration-200 transform bg-green-500 rounded-md hover:bg-green-400 focus:outline-none focus:bg-green-400 focus:ring focus:ring-green-300 focus:ring-opacity-50 mt-2'>SIGN IT WITH GOOGLE</button>
                 <p className="mt-6 text-sm text-center text-gray-400">
                   Don not have an account yet? <Link to="/register" className="text-blue-500 focus:outline-none focus:underline hover:underline">Sign up</Link>.
                 </p>
